@@ -41,10 +41,15 @@ if [ -n "${ROLE}" ]
 then
 	case ${ROLE} in
 		nimbus|n)
-			/opt/storm/bin/storm nimbus
+			/opt/storm/bin/storm nimbus &
+			sleep 60
+			tail -f /opt/storm/logs/nimbus.log
 			;;
 		supervisor|s)
-			/opt/storm/bin/storm supervisor
+			/opt/storm/bin/storm supervisor &
+			sleep 60
+			touch /opt/storm/logs/worker-{6700,6701,6702,6703}.log
+			tail -f /opt/storm/logs/supervisor.log /opt/storm/logs/worker-670*.log
 			;;
 		ui|u)
 			/opt/storm/bin/storm ui

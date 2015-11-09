@@ -4,6 +4,12 @@
 
 for gennai cluster. ([gennai.docker](https://github.com/siniida/gennai.docker))
 
+## Using
+
+* Storm 0.9.4
+* Oracle JRE 7u80
+* CentOS 6
+
 ## Require
 
 ### ZooKeeper
