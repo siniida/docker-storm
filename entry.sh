@@ -23,6 +23,8 @@ then
 	sed -i -e "s/.*\(storm\.zookeeper\.servers\):.*/\1:${ZK_STR}/g" ${CONFIG}
 fi
 
+sleep 10
+
 ### nimbus host
 if [ -n "${NIMBUS}" ]
 then
